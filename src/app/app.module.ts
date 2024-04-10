@@ -24,6 +24,15 @@ import { ServerComponent } from './routingex/servers/server/server.component';
 import { ServersComponent } from './routingex/servers/servers.component';
 import { HomeComponent } from './routingex/home/home.component';
 import { EditServerComponent } from './routingex/servers/edit-server/edit-server.component';
+import { ServersService } from './routingex/servers/servers.service';
+import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'users', component: UsersComponent },
+  { path: 'servers', component: ServersComponent }
+];
 
 @NgModule({
   declarations: [
@@ -52,9 +61,11 @@ import { EditServerComponent } from './routingex/servers/edit-server/edit-server
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [ServersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
