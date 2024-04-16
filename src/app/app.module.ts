@@ -29,6 +29,8 @@ import { ServersComponent } from './routingex/servers/servers.component';
 import { HomeComponent } from './routingex/home/home.component';
 import { EditServerComponent } from './routingex/servers/edit-server/edit-server.component';
 import { ServersService } from './routingex/servers/servers.service';
+import { ShoppingListService } from './shopping-list/shopping-list.service';
+import { FormsExampleComponent } from './forms-example/forms-example.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,8 @@ import { ServersService } from './routingex/servers/servers.service';
     ServerComponent,
     ServersComponent,
     HomeComponent,
-    EditServerComponent
+    EditServerComponent,
+    FormsExampleComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +65,7 @@ import { ServersService } from './routingex/servers/servers.service';
     //RouterModule.forRoot(appRoutes)
     AppRoutingModule
   ],
-  providers: [ServersService],
+  providers: [ServersService, ShoppingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
